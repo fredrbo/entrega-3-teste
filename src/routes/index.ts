@@ -4,9 +4,11 @@ import horaExtra from './horaExtra'
 import sobreaviso from './sobreaviso'
 import squad from './squad'
 import user from './user'
+import department from './department'
 
 const routes = Router()
 
+routes.use("/department", department)
 routes.use("/hora-extra", horaExtra)
 routes.use("/sobreaviso", sobreaviso)
 routes.use("/usuario", usuario)

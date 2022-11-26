@@ -1,5 +1,5 @@
 import { Usuario } from '../entitities/Usuario';
-import { AppDataSource } from "../app-data-source"
+import { AppDataSource } from "../data-source"
 import { Request, Response } from 'express'
 import { Squad } from "../entitities/Squad";
 

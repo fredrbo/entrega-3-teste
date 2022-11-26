@@ -5,8 +5,10 @@ import sobreaviso from './sobreaviso'
 import squad from './squad'
 import user from './user'
 import department from './department'
+import UsersController from "../controllers/UsersController"
 
 const routes = Router()
+routes.post("/login", UsersController.login)
 
 routes.use("/department", department)
 routes.use("/hora-extra", horaExtra)

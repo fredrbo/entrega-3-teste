@@ -1,6 +1,6 @@
 import { Sobreaviso } from '../entitities/Sobreaviso';
 
-import { AppDataSource } from "../app-data-source"
+import { AppDataSource } from "../data-source"
 import { Request, Response } from 'express'
 import { Usuario } from '../entitities/Usuario';
 

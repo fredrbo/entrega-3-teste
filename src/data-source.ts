@@ -9,7 +9,7 @@ export const AppDataSource = new DataSource({
     synchronize: true, // true indica que o schema do BD será criado a cada vez que a aplicação inicializar
     logging: false, // true indicq que as consultas e erros serão exibidas no terminal
     entities: ["src/entitities/*.ts"], // entidades que serão convertidas em tabelas
-    migrations: [],
+    migrations: ["src/migrations/*.ts"],
     subscribers: [],
     maxQueryExecutionTime: 2000 // 2 seg.
 })

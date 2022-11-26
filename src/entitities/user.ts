@@ -1,11 +1,14 @@
 import { Department } from './Department';
 import { Profile } from './type/Types';
-import { Entity, PrimaryGeneratedColumn, Column, JoinTable, ManyToMany } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, JoinTable, ManyToMany, ManyToOne } from "typeorm"
 
 @Entity({name:"users"})
 export class User {
     @PrimaryGeneratedColumn("uuid")
     iduser: string
+
+    @Column({length: 70, nullable: false})
+    idmaster: string
 
     @Column({length: 70, nullable: false})
     name: string
@@ -21,6 +24,10 @@ export class User {
 
 
     @ManyToMany(() => Department)
-    @JoinTable()
+    @JoinTable({name : 'works'})
     department: Department[]
+
+    @ManyToOne(() => User, (user) => user.idmaster)
+    @JoinTable()
+    User: User
 }

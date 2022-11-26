@@ -1,5 +1,6 @@
+import { Department } from './Department';
 import { Profile } from './type/Types';
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, JoinTable, ManyToMany } from "typeorm"
 
 @Entity({name:"users"})
 export class User {
@@ -17,5 +18,9 @@ export class User {
 
     @Column({nullable: false, enum: ['employee','manager','admin']})
     type: Profile
-    // 0 = admin, 1 = gestor, 2 colaborador
+
+
+    @ManyToMany(() => Department)
+    @JoinTable()
+    department: Department[]
 }
